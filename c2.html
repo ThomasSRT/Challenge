@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Café du Coin - Récapitulatif des Ventes</title>
+</head>
+<body>
+    <script src="./c2.js" defer >
+        function calculerVentes() {
+            let cafesVendus = parseInt(document.getElementById('cafes').value);
+            let croissantsVendus = parseInt(document.getElementById('croissants').value);
+            let jusVendus = parseInt(document.getElementById('jus').value);
+
+            const prixCafe = 2;
+            const prixCroissant = 1.5;
+            const prixJus = 2.5;
+
+            let totalCafes = cafesVendus * prixCafe;
+            let totalCroissants = croissantsVendus * prixCroissant;
+            let totalJus = jusVendus * prixJus;
+
+            let totalVentes = totalCafes + totalCroissants + totalJus;
+
+            let totalArticlesVendus = cafesVendus + croissantsVendus + jusVendus;
+
+            document.getElementById('recapitulatif').innerHTML = `
+                Cafés vendus : ${cafesVendus} (${totalCafes}€)<br>
+                Croissants vendus : ${croissantsVendus} (${totalCroissants}€)<br>
+                Jus d'orange vendus : ${jusVendus} (${totalJus}€)<br>
+                Total des ventes : ${totalVentes}€<br>
+                Nombre total d'articles vendus : ${totalArticlesVendus}
+            `;
+        }
+    </script>
+</body>
+</html>
